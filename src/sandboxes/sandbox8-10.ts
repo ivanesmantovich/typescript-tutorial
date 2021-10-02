@@ -74,3 +74,30 @@ greet(LNC);
 // Type aliases
 
 // ------------------------------------------------------------------------
+
+// Function signatures
+
+// Первый пример
+// Сначала задаю типы
+let teleport: (charName: string, destination: string) => void;
+// После этого обозначаю функцию
+teleport = (charName, destination) => {
+	console.log(`${charName} successfully teleported to the ${destination}.`);
+};
+teleport('Kaine', 'Limsa Lominsa');
+
+// // Так делать нельзя
+// let calc: (firstNum: number, secondNum: number, action: string) => number;
+// calc = (firstNum, secondNum, action) => {
+// 	if (action == 'add') return firstNum + secondNum;
+// };
+
+// Третий пример
+let lvlsToDRG: (lancer: {name: string, currentLvl: number}) => string
+lvlsToDRG = (lancer) => {
+	return `${lancer.name} has ${30 - lancer.currentLvl} lvls left to become a Dragoon.`
+}
+
+console.log(lvlsToDRG({name: 'Kaine', currentLvl: 20}))
+
+// Function signatures
