@@ -1,3 +1,4 @@
+import { Film } from '../interfaces/Film.js';
 // Functions
 // const add = (a: number, b: number, c: number | string = 10) => {
 // 	console.log(a+b);
@@ -105,10 +106,10 @@
 // Generics
 
 // Необходимо дополнить обьект передаваемый в виде аргумента
-const addID = <T>(obj: T) => {
-	let id = Math.floor(Math.random() * 100);
-	return { ...obj, id };
-};
+// const addID = <T>(obj: T) => {
+// 	let id = Math.floor(Math.random() * 100);
+// 	return { ...obj, id };
+// };
 
 // Нельзя
 // const addID = (obj:object) => {
@@ -116,46 +117,85 @@ const addID = <T>(obj: T) => {
 // 	return {...obj, id}
 // }
 
-let firstDoc = addID({ name: 'Kaine', age: 21});
-console.log(firstDoc)
+// let firstDoc = addID({ name: 'Kaine', age: 21});
+// console.log(firstDoc)
 
 // Интерфейс в котором тип некоторых полей не должен быть обозначен сразу же и может быть указан потом при создании конкретного экземпляра
-interface Resource<T> {
-	id: number;
-	resourceName: string;
-	data: T;
-}
+// interface Resource<T> {
+// 	id: number;
+// 	resourceName: string;
+// 	data: T;
+// }
 
-const numResources: Resource<number>[] = [];
-const strResources: Resource<string>[] = [];
+// const numResources: Resource<number>[] = [];
+// const strResources: Resource<string>[] = [];
 
-const firstResource: Resource<number> = {
-	id: 1,
-	resourceName: 'Cash payment',
-	data: 500,
-};
+// const firstResource: Resource<number> = {
+// 	id: 1,
+// 	resourceName: 'Cash payment',
+// 	data: 500,
+// };
 
-const secondResource: Resource<string> = {
-	id: 2,
-	resourceName: 'Credit',
-	data: 'Until 20/04/2022',
-};
+// const secondResource: Resource<string> = {
+// 	id: 2,
+// 	resourceName: 'Credit',
+// 	data: 'Until 20/04/2022',
+// };
 
-const thirdResource: Resource<number> = {
-	id: 3,
-	resourceName: 'Free',
-	data: 0,
-};
+// const thirdResource: Resource<number> = {
+// 	id: 3,
+// 	resourceName: 'Free',
+// 	data: 0,
+// };
 
-numResources.push(firstResource)
-strResources.push(secondResource)
+// numResources.push(firstResource)
+// strResources.push(secondResource)
 // strResources.push(thirdResource) // Type 'number' is not assignable to type 'string'.
-
 
 // Могу сохранять "типовую стабильность" между инпутом и аутпутом
 // Передать массив значений указанного типа и получить массив уникальных значений указанного типа.
-function fn<T>(arg: T[]): T[] {
-	return Array.from(new Set<T>(arg));
-}
+// function fn<T>(arg: T[]): T[] {
+// 	return Array.from(new Set<T>(arg));
+// }
 
 // Generics
+
+// Enums
+
+enum GenreType {
+	ACTION = 'Action',
+	THRILLER = 'Thriller',
+	HORROR = 'Horror',
+	ROMANCE = 'Romance',
+	COMEDY = 'Comedy',
+}
+
+let firstFilm: Film;
+firstFilm = {
+	title: 'Titanic',
+	length: '3h 14min',
+	year: 1997,
+	genre: GenreType.ROMANCE,
+};
+
+let secondFilm: Film;
+secondFilm = {
+	title: 'Pulp Fiction',
+	length: '2h 34min',
+	year: 1994,
+	genre: GenreType.THRILLER,
+};
+
+// Enums
+
+// Tuples
+
+type Product = [string, number];
+let firstProduct:Product
+let secondProduct:Product
+let thirdProduct:Product
+firstProduct = ['Apple', 10]
+secondProduct = ['Pear', 15]
+
+
+// Tuples
