@@ -1,4 +1,4 @@
-import { HasLimitBreak } from '../interfaces/hasLimitBreak.js';
+import { HasLimitBreak } from '../interfaces/HasLimitBreak.js';
 import { IsWarriorOfLight } from '../interfaces/IsWarriorOfLight.js';
 export class Character implements IsWarriorOfLight, HasLimitBreak {
 	constructor(

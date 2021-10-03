@@ -6,5 +6,5 @@ const notMe = new Soldier('Cloud Strife', 25, 'Bike');
 const limitBreakers = [];
 limitBreakers.push(me);
 limitBreakers.push(me);
-let myList = new ListTemplate();
-myList.render(notMe, 'Won');
+let myList = new ListTemplate(document.querySelector('.item-list'));
+myList.render(me, 'Won', 'start');

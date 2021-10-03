@@ -1,4 +1,4 @@
-import { HasLimitBreak } from '../interfaces/hasLimitBreak.js';
+import { HasLimitBreak } from '../interfaces/HasLimitBreak.js';
 export class Soldier implements HasLimitBreak {
 	constructor(
 		public name: string,

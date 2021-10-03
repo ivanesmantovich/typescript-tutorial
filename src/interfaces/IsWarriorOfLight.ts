@@ -1,4 +1,4 @@
-import { HasLimitBreak } from '../interfaces/hasLimitBreak.js'
+import { HasLimitBreak } from 'HasLimitBreak.js';
 export interface IsWarriorOfLight {
 	name: string;
 	dateOfObtainingFirstCrystal: string;

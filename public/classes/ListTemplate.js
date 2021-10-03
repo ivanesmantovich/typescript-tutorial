@@ -1,8 +1,8 @@
 export class ListTemplate {
-    constructor(list = document.querySelector('.item-list')) {
+    constructor(list) {
         this.list = list;
     }
-    render(warrior, heading, atStart) {
+    render(warrior, heading, pos) {
         let data;
         data = document.createElement('li');
         let header = document.createElement('h4');
@@ -11,6 +11,9 @@ export class ListTemplate {
         let text = document.createElement('p');
         text.textContent = warrior.limitBreak();
         data.appendChild(text);
-        this.list.appendChild(data);
+        if (pos === 'start')
+            this.list.prepend(data);
+        else
+            this.list.append(data);
     }
 }
